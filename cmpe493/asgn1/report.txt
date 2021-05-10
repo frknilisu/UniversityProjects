@@ -1,0 +1,15 @@
+1) 
+	- concatenate text and body of article as one string
+	- split the string into tokens from the decided delimiters
+	- remove stopwords from tokens
+	- stemmize the tokens
+
+	a) 2863012 
+	b) 2238277
+	c) 47296
+	d) 34655
+	e) ['621', 'screenplay', 'wien', 'cadiz', 'oilfields', 'basix', 'intending', 'westminsters', 'berne', '0758', 'kirnan', 'postipankki', 'payx', 'dust', '6mm', 'duwayne', 'leaked', 'endotronics', 'portfolio', 'nominees']
+	f) ['sinhales', '621', 'gallei', 'wien', 'terr', 'cadiz', 'basix', 'ranasingh', '0758', 'kirnan', 'postipankki', 'caico', 'relas', 'payx', 'dust', '6mm', 'accordi', 'portfolio', 'steadfast', 'venturesom']
+
+2)	first file is a dictionary that key hold words and value hold word id.
+	second file is a dictionary that key hold word id and value hold a dictionary that key hold article id and value hold a list that contains indexes of the word in the article
