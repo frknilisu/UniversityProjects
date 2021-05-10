@@ -1,0 +1,17 @@
+Normal TCP three-way handshake:
+ 
+During a normal TCP communication, the following steps occur;
+ 
+The client hosts sends a SYN / Synchronize to initiate the connection request.
+The server responds / acknowledges the original SYN request by sending SYN-ACK back to the client.
+The client sends the ACK as a response back to the server, after which the connection is established.
+ 
+This type of communication is known as TCP Three-way handshake. The Diagram below explains the TCP three-way handshake process.
+[normal3handshake.jpg]
+
+TCP SYN Flood:
+ 
+An attacker client sends the TCP SYN connections at a high rate to the victim machine, more than what the victim can process. This is a form of resource exhausting denial of service attack. The attacker client can do the effective SYN attack using two methods.
+ 
+The malicious client which performs the SYN attack will keep sending the SYN packets which are usually of 64 byteAnd when the victim server sends the SYN-ACK messages as an acknowledgement the malicious clien the malicious attacker client does not send the ACK message. The client just ignores the SYN-ACK message and keeps sending the new SYN messages.
+As an alternative, the malicious client can forge / spoof the source IP address and sends the SYN packets to the victim server. The Victim server sends the SYN-ACK to the spoofed source address and waits for the ACK response. Since the spoofed sources did not originally send t

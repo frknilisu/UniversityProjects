@@ -1,0 +1,38 @@
+IoC = Indicators Of Compromise
+Hgvgyjufg
+virus signatures, IP address, md5 hashes of malware files or urls or domain names of botnet command and control servers.
+
+url, file hash, string
+kullanilan api, code injection sign, suspicious process tree
+
+opnioc, cybox, maec, iosktlren def, stuxnet ioc
+
+mandinant ioc finder, yara
+stix
+
+ioc araclari
+redline, memoryze, audit viewer, highlighter, opening     c_scan, red curtain, web historian, first response
+
+Unusual Outbound Network Traffic
+Anomalies in Privileged User Account Activity
+Geographical Irregularities
+Log-In Red Flags
+Increases in Database Read Volume
+HTML Response Sizes
+Large Numbers of Requests for the Same File
+Mismatched Port-Application Traffic
+Suspicious Registry or System File Changes
+Unusual DNS Requests
+Unexpected Patching of Systems
+Mobile Device Profile Changes
+Bundles of Data in the Wrong Place
+Web Traffic with Unhuman Behavior
+Signs of DDoS Activity
+
+https://www.darkreading.com/attacks-breaches/top-15-indicators-of-compromise/d/d-id/1140647?page_number=1
+https://digitalguardian.com/blog/what-are-indicators-compromise
+https://www.sans.org/reading-room/whitepapers/forensics/ioc-indicators-compromise-malware-forensics-34200
+https://www.slideshare.net/bgasecurity/zararl-yazlm-tespiti-ve-siber-istihbarat-amacl-ioc-kullan
+
+
+

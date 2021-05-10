@@ -1,0 +1,67 @@
+L2 Attacks
+mac attacks:
+	mac flooding/cam overflow:
+	mac spoofing:
+dhcp attacks:
+	dhcp starvation(DoS): Yersinia
+	dhcp spoofing-rogue dhcp server(MitM): Ettercap
+arp attacks:
+	arp spoofing
+	arp poisoning
+	arp cache poisoning
+vlan hopping
+	1.Switch spoofing
+	2.Double tagging
+
+Ortadaki Adam Saldırısı hakkındaki ayırımları aşağıda listelenmiştir.
+
+Yerel Ağ Üzerinde Yapılabilecek Saldırılar
+	ARP Poisoning (ARP Zehirlenmesi)
+	DNS Spoofing (DNS Önbellek Zehirlenmesi, Aldatma)
+	Port Stealing
+	STP Mangling
+Yerel Ağdan Uzak Ağa Gateway Aracılığıyla Yapılabilecek Saldırılar
+	ARP Poisoning (ARP Zehirlenmesi)
+	DNS Spoofing (DNS Önbellek Zehirlenmesi, Aldatma)
+	DHCP Spoofing (DHCP Aldatma)
+	ICMP Redirection
+	IRDP Spoofing
+	Route Mangling
+Uzak Ağ Üzerinde Yapılabilecek Saldırılar
+	DNS Poisoning (DNS Zehirlenmesi)
+	Traffiec Tunneling
+	Route Mangling
+
+STP MiTM (Vlan) Attack: Yersinia, Ettercap, Wireshark
+STP MiTM (ISL) Attack: Yersinia, Ettercap, packETH, Wireshark
+
+port flooding
+ddos attacks
+syn flood
+http get flood
+	apachebenchmark
+	DoSHttp
+	webserver stress tool
+dns flood
+dns tunneling: uzakta bulunan bir sunucu ile haberlesmek icin, internet erisiminin engellendigi yerel agda, dns istekleri uzerinden internete cikabilmek
+ip spoofing
+ip fragmentation
+	-TearDrop
+	-PingOfDeath
+	-guncel fragmantasyon ataklari
+
+
+
+http session attacks
+	sidejacking
+	surfjacking
+	cookieforcing
+
+	firesheep
+	hamster&ferret
+	cookiemonster
+
+sslMiTM -> cain&abel
+sslstrip
+
+port knocking

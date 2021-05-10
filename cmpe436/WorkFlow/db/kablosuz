@@ -1,0 +1,24 @@
+
+
+Think of it like joining a group of people in a conversation, but at the same time being able to hear when someone says "Hey, Mike, I have a new laptop". Even though you're not Mike, and that sentence was intended to be heard by Mike, but you're still able to hear it.
+
+Promiscuous Mode:
+
+Capture packets on a network that you have connected to. This is likely what you need to be in if you want to analyze packets (Wireshark, tcpdump, etc.)
+
+Monitor Mode:
+
+Capture packets regardless of connected network. No association to AP needed (and no authentication). Because it is not connected to a network, you can't process the Ethernet inf
+njjnd
+hshshyebdbo.
+
+jdhxuydhd
+yusufcaan
+
+
+Saliiih s. a. 
+naber moruk
+
+
+
+

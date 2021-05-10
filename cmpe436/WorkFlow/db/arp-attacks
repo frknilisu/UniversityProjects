@@ -1,0 +1,57 @@
+ARP ATTACKS
+	what is arp? [1]
+		ARP (Address Resolution Protocol): IP adreslerinin fiziksel makine adresiyle (MAC addresi) eşleştirilmesini sağlar ve ARP Cache isimli tabloda bütün MAC adresleri ve o adresle eşleşmiş IP adresleri saklanır.
+
+	arp nasil calisir? [2]
+		ARP request : IP Adresine ait donanım adresi(MAC adresi) sorgulamak için kullanılır
+			10:09:20.356809 arp who-has 12.16.6.17 tell 12.16.6.185
+		ARP reply : Belirtilen Ip adresine uyan donanım adresini döndürür
+			10:09:20.356809 arp reply 12.16.6.17 is-at 0:80:c8:f8:5c:73
+
+		[arp-request.png]
+		[arp-reply.png]
+
+	arp paket formati [3]
+
+		[arp-packet-structure.png] [4]
+		[arp-packet-analysis.png]
+
+		00:23:54:69:8f:58 MAC adresine, 24.6.170.101 IP adresine sahip kullanici 24.6.168.1 IP adresindeki kullanicinin MAC adresini ogrenmek icin broadcast mesaj yolluyor ("Who has 24.6.168.1? Tell 24.6.170.101").
+		Target MAC adres henuz bilinmedigi icin 00:00:00:00:00:00 degerine sahip.
+
+	ARP Cache: İşletim sistemleri daha onceden almis olduklari ARP cevaplarini tekrardan ulasmak gerektiginde sorgu gondermeyelim diye bir muddet saklarlar. Bu saklanan bilgiye ARP kaydı denir.
+
+	arp spoofing(arp zehirlenmesi): Bir ip adresine karşılık, sahte bir MAC adresi oluşturulmasına ARP zehirlenmesi denir.
+
+	arp protokolune dayali saldirilar [5] 
+
+		ARP zehirlenmesi adı verilen saldırılar yerel ağlarda gerçekleştirilen saldırılardır.
+		ARP zehirlenmesi üç şekilde gerçekleştirilmektedir:
+			1) Hedef Bilgisayarın ARP tablosunu doldurarak: 
+				saldırgan hedef bilgisayarın ARP tablosunu yanlış bilgilerle doldurur. Boylece saldirgan, hedef bilgisayarın göndereceği paketlerin belirttiği adreslere gitmesini sağlayabilir. Bu yöntemle gönderilmek istenilen paketin, istenilen yere ulaşması engellenebilir.
+			2) Ortadaki adam yöntemiyle: 
+				Networke bağlı cihazların dış networkler ile haberleşebilmesi için bir default gateway adresine ihtiyaç duyarlar. Networke bağlı bir saldırgan kendi MAC adresi ile gateway'in IP adresi eslenmis sekilde olan ARP anonsları yapar. diğer cihazlar bu mesajlar dogrultusunda cachelerini güncellerler. kurban internete cikmak istedigi zaman paketler cache'indeki gateway adresinin karsiligi olan MAC adresine gonderilir. saldirgan internete cikmak icin kendine gelen paketleri gercek gateway'e yonlendirir. cevaplar router'dan tekrar saldirganin cihazina gelir. saldirgan bu paketleri gercek sahibine yonlendirir. boylece saldirgan gidip gelen butun paketleri uzerinden gecirmis olur.
+			3) Hedef Bilgisayarın Paketlerini Başka Bir Bilgisayara Göndererek gerçekleştirilir
+
+	Arp Saldırı Araçları [6]
+		windows araclari: winarpspoof, ettercap, cain&abel
+		linux araclari: arpspoof, ettercap, nemesis, scapy
+
+		ettercap ile arp poisoning
+
+		Dsniff, Cain & Abel, ettercap, Yersinia, etc...
+
+	Arp Ataklarından Korunma Yöntemleri [7]
+		Subnetting: network'u kucuk vlan'lere bolmek arp poisoning saldiri yuzeyini azaltir.
+		Statik Arp Kayitlari: Isletim sistemine istedigi kaynaklar icin(gateway) sabit MAC adresi tanimlanir. Boylece sisteme gelecek olan Arp Reply paketleri Arp Cache'i degistiremez.
+		Switch uzerindeki koruma yontemleri:
+			- DHCP Snooping
+			- Source Guard
+			- Dynamic ARP Inspection
+		IDS veya ArpWatcher ile sistem gozlemlenebilir.
+		ArpOn ve Arpalert acik kaynak kodlu araclar
+
+
+references:
+	[1] https://tr.wikipedia.org/wiki/Arp_zehirlenmesi
+	[4] http://www.h3c.com.hk/Technical_Support___Documents/Technical_Documents/Switches/H3C_S7500_Series_Switches/Configuration/Operation_Manual/H3C_S7500_OM-(Release_3100_Series)-(V1.04)/200707/207835_1285_0.htm

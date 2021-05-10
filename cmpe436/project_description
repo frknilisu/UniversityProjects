@@ -1,0 +1,6 @@
+I will create a reporting app for a project team. In my app, members of the project will report what they did every day. 
+- Each team member will be able to edit only today's report (not past).
+- Each team member will be able read all reports from the beginning of the project.
+- While a member writing or editing his report for today, other members cannot writing or editing. This means two or more members cannot writing or editing at the same time.
+
+I am going to use Android on the client side and use JSP(Java Server Page) on the server side.

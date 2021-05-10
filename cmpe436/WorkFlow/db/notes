@@ -1,0 +1,26 @@
+subnetting
+	Örnek 2: 192.168.0.0/24′ ü 6 alt subnete bölelim.
+
+	2^m>=6  ifadesinden dolayı m değeri olarak 3 vermem yeterlidir. 3 verdiğim takdirde 2^3′ den sonucum 8 olacak bu demek oluyor ki networkumu 8 alt subnete böleceğim ve bunların içinden istediğim 6 tane subneti kullanabileceğim.  Bu da host bitlerimden 3 biti 1 olarak değiştireceğimi gösterir.
+
+	Şimdi yeni subnet maskı bulalım:
+
+Ok	11111111.11111111.11111111.00000000 : 255.255.255.0  (Şuanli subnet mask)
+	11111111.11111111.11111111.11100000: 255.255.255.224 (Yeni subnet mask)
+
+	Peki her bir alt networkde kaç adet IP kullanabileceğim? Bu sorunun cevabını bulurken de 2^n-2 formülünü kullanacağım. n değeri yerine 5 yazağım çünkü yeni subnet maskın bilgisinde host bitlerimin sayısı 5 oldu. 2^5-2=30 adet IP adresi kullanabilirmişim.
+
+	subnet id 			ilk ip 			son ip 			broadcast address
+	192.168.0.0			192.168.0.1 	192.168.0.30 	192.168.0.31
+	192.168.0.32		192.168.0.33 	192.168.0.62 	192.168.0.63
+	192.168.0.64		192.168.0.65 	192.168.0.94 	192.168.0.95
+	192.168.0.96		192.168.0.97 	192.168.0.126 	192.168.0.127
+	192.168.0.128		192.168.0.129 	192.168.0.158 	192.168.0.159
+	192.168.0.160		192.168.0.161 	192.168.0.190 	192.168.0.191
+	192.168.0.192		192.168.0.193 	192.168.0.222 	192.168.0.223
+	192.168.0.224		192.168.0.225 	192.168.0.254 	192.168.0.255
+
+
+	Özel(Private) IP adresler)
+	•    10.0.0.0 – 10.255.255.255
+	•    172.16.0.0 �

@@ -1,0 +1,55 @@
+Understanding tcpdump command parameters
+-D: list interfaces
+-i: choose interface
+-w: write the raw data to a file
+-r: read pcap
+-n: don’t resolve hostnames
+-nn: don’t resolve hostnames or port names
+-t: timestamp'ler istenmiyorsa
+-tttt : Give maximally human-readable timestamp output
+-c: yakalanacak paket sayısını belirlemek
+-s: yakalanacak paket boyutunu belirlemek (-s0: capture the whole packet)
+-v, -vv, -vvv : Increase the amount of packet information you get back
+-p: promisc moddan çıkıs
+-A: display in ASCII
+-S: show absolute sequence numbers
+-q : be less verbose (more quiet) with your output
+-X : Show the packet’s contents in both hex and ASCII
+-XX : Same as -X, but also shows the ethernet header
+-S : print absolute sequence numbers
+-e : Get the ethernet header as well
+-E : Decrypt IPSEC traffic by providing an encryption key
+
+BPF(Berkley Packet Filter)
+1.Type
+	Host, net, port
+2.Direction
+	Src, dst
+3.Protocol
+	Ether, fddi, wlan, ip, ip6, arp, rarp, tcp, udp, icmp, ah
+
+ex:
+	tcpdump host 10.0.0.21
+	tcpdump -i eth0 dst host 10.0.0.1
+	tcpdump -i eth0 src host 10.0.0.21
+	tcpdump host hotmail.com
+	tcpdump src host 10.1.0.59 and dst host 10.1.0.1
+
+	tcpdump net 1.2.3.0/24
+
+	tcpdump port 23
+	tcpdump portrange 21-23
+	
+	tcpdump dst port 23
+	tcpdump src port 23
+	Fhjub
+
+	tcpdump -i eth0 tcp
+
+	tcpdump -nn host 192.168.2.165 and port 23
+
+	tcpdump less 32 
+	tcpdump greater 64 
+	tcpdump <= 128
+
+Isolating Specific TCP Flags

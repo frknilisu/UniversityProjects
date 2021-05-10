@@ -1,0 +1,32 @@
+s → t iff s.v < t.v
+
+Where
+• x < y defined as
+	- All elements of x are less than or equal to the corresponding elements of y
+	- At least one element of x is strictly less than the corresponding element of y
+• x ≤ y defined as (x < y) or (x = y)
+
+
+s → t iff (s.v[s.p] ≤ t.v[s.p]) and (s.v[t.p] < t.v[t.p])
+
+Proof:
+
+•  Note that
+	– A iff B is equivalent to [not(A) implies not(B)] and [A implies B]
+
+Part 1: not(s → t) implies not(s.v < t.v)
+	– Suffices to show that not(s → t) implies (t.v[s.p] < s.v[s.p])
+		since (t.v[s.p] < s.v[s.p]) implies not(s.v < t.v)
+	
+	–  Case 1: s.p = t.p; t occurs before s then (t.v[s.p] < s.v[s.p]).
+	–  Case 2: s.p ≠ t.p
+	–  Since not(s → t); t.p cannot have seen s.v[s.p].
+	–  Hence, (t.v[s.p] < s.v[s.p])
+
+Part 2: s → t implies s.v < t.v
+	–  There exists a message path from s to t. Therefore, for all k: s.v[k] ≤ t.v[k].
+	–  Also, since not(t → s), from Part 1 above, s.v[t.p] < t.v[t.p].
+	–  Hence, s.v < t.v. Done.
+
+
+

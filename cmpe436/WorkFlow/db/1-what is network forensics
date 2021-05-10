@@ -1,0 +1,14 @@
+what is network forensics?
+	we can define network forensics as capturing, recording, analyzing, extracting original contents from captured packets and analysis of network events in order to discover the source of attacks. [1]
+
+network forensic tools
+	wireshark
+	tcpdump
+	networkminer
+
+
+references:
+	[1] http://btkultur.blogspot.com.tr/2016/06/network-forensic-nedir.html
+	[1] Fundamentals of Network Forensics: A Research Perspective (R.C. Joshi • Emmanuel S. Pilli)
+	https://www.wireshark.org/docs/
+	http://www.karel.com.tr/bilgi/wireshark-nedir-nasil-kullanilir
