@@ -1,0 +1,38 @@
+void smaller_than(Node *node, int x)
+{
+    if (node->value >= x)
+    {
+        /* Skip this node and its descendants, as they are all >= x . */
+        return;
+    }
+
+    printf("%d\n", node->value);
+
+    if (node->left != NULL)
+        smaller_than(node->left, x);
+    if (node->right != NULL)
+        smaller_than(node->right, x);
+}
+
+
+#define ROOT       0
+#define LEFT(pos)  ((pos)*2 + 1)
+#define RIGHT(pos) ((pos)*2 + 2)
+
+void smaller_than(int x, int pos, int heap[], int count)
+{
+    /* Make sure item exists */
+    if (pos >= count)
+        return;
+
+    if (heap[pos] >= x)
+    {
+        /* Skip this node and its descendants, as they are all >= x . */
+        return;
+    }
+
+    printf("%d\n", heap[pos]);
+
+    smaller_than(x, LEFT(pos), heap, count);
+    smaller_than(x, RIGHT(pos), heap, count);
+}

@@ -1,0 +1,8 @@
+It is (b) (f(n+1)−f(n))/f(n)
+and   (a) (f(2n)−f(n))/f(n)
+For example, for n^2;
+if you increase the input size by one, the percentage increase is
+(n+1)^2−n^2 = (2n+1)/(n^2) * 100%
+
+if you double the input size, the percentage increase is
+(2n)^2−n^2 = 300%

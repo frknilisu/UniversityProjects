@@ -1,0 +1,11 @@
+Find the unique path between x and y in T. This takes O(V ) time using DFS because
+there are only V − 1 edges in T. We claim the edge T remains an MST if and only if w
+is greater than or equal to the weight of every edge on the path.
+
+• If any edge on the path has weight greater than w, we can decrease the weight of T
+by swapping the largest weight edge on the path with x-y. Thus, T does not remain
+an MST.
+• If w is greater than or equal to the weight of every edge on the path, then the cycle
+property asserts that x-y is not in some MST (because it is the largest weight edge
+on the cycle consisting of the path from x to y plus the edge x-y). Thus, T remains
+an MST.

@@ -1,0 +1,7 @@
+M[n,k] = min_{i\leq n}  max ( M[i, k-1], \sum_{j=i+1}^{n} x_i ) 
+
+Using these initial values for the table: 
+
+M[i,1] = \sum_{j=1}^{i} x_i  and  M[1,j] = x_j  
+
+The running time is $O(kn^2)$ (polynomial )

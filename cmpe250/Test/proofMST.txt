@@ -1,0 +1,8 @@
+Proof by contradiction. Assume for the sake of contradiction that (vi, vi+1) does belong
+to the minimum spanning tree T. Removing (vi, vi+1) from T divides T into two connected
+components P and Q, where some nodes of the given cycle are in P and some are in Q. For any
+cycle, at least two edges must cross this cut, and therefore there is some other edge (vj , vj+1) on
+the cycle, such that adding this edge connects P and Q again and creates another spanning tree T �
+.
+Since the weight of (vj, vj+1) is less than (vi, vi+1), the weight of T � is less than T and T cannot
+be a minimum spanning tree. Contradiction

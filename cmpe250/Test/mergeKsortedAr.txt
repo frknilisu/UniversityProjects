@@ -1,0 +1,22 @@
+
+1.Put the first elements of the lists in a min-heap H of size k. O(klgk)
+	•the key of each element of H is the smallest number in the corresponding list (note that
+	finding this is an O(1) operation since every list in the input is ordered);
+
+2.while H is non-empty run O(n) times
+	Extract the minimum m from H and store it in result[i] (O(lgk))
+	Insert the next value from that list into the heap (O(lgk))
+	
+The running time is obviosuly in O(klgk+2*nlgk)=O(nlgk).
+
+// populate the initial heap
+for i = 1:k                   // runs O(k) times
+  heap.insert(0, k)           // O(log k)
+
+// keep doing this - delete the minimum, insert the next value from that list into the heap
+while !heap.empty()           // runs O(n) times
+  i,k = heap.deleteMin();     // O(log k)
+  result[c++] = lists[k][i]
+  i++
+  if (i < lists[k].length)    // insert only if not end-of-list
+    heap.insert(i, k)         // O(log k)

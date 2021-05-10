@@ -1,0 +1,42 @@
+// Assign first color to source => colorArr[src] = 1;
+ 
+    // Create a queue (FIFO) of vertex numbers and enqueue source vertex
+    // for BFS traversal
+	
+	// Run while there are vertices in queue (Similar to BFS)
+	
+	// Dequeue a vertex from queue
+	// Find all non-colored adjacent vertices
+	// An edge from u to v exists and destination v is not colored
+	// Assign alternate color to this adjacent v of u and push it
+	
+	//  An edge from u to v exists and destination v is colored with
+            // same color as u => return false
+			
+			
+	// If we reach here, then all adjacent vertices can be colored with 
+    // alternate color
+
+
+bool isBipartite(int source){
+	int colorArr[V] = {-1};
+	colorArr[source] = 1;
+	
+	queue<int> q;
+	q.push(source);
+	
+	while(!q.empty()){
+		int current = q.front();
+		q.pop();
+		
+		for(int i = 0; i < V; i++){
+			if(adjMatrix[current][i] && colorArr[i] == -1){
+				colorArr[i] = 1 - colorArr[current];
+				q.push(i);
+			} else if(adjMatrix[current][i] && colorArr[i] == colorArr[current])
+				return false;
+		}
+	}
+	
+	return true;
+}
